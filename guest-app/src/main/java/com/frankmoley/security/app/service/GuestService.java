@@ -45,7 +45,6 @@ public class GuestService {
     }
 
     public Guest updateGuest(long id, GuestModel guestModel) {
-        System.out.println(guestModel);
         String url = guestServiceUrl + GUESTS + SLASH + id;
         HttpEntity<GuestModel> request = new HttpEntity<>(guestModel, null);
         return this.restTemplate.exchange(url, HttpMethod.PUT, request, Guest.class).getBody();
